@@ -57,7 +57,7 @@ class BaseSteps extends Steps {
   }
 
   Then("""^Download receipt button is displayed$"""){ () =>
-    System.out.println(Base.pageSource)
+//    System.out.println(Base.pageSource)
     Base.isLinkTextPresent("Download receipt")
   }
 }

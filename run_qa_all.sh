@@ -1,3 +1,3 @@
 #! /bin/sh
 
-sbt -Denvironment=qa -Dbrowser=chrome clean 'test-only voabar.runner.Runner'
+sbt -Denvironment=qa -Dbrowser=headless clean 'test-only voabar.runner.Runner'

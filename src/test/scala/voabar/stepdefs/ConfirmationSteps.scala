@@ -21,14 +21,14 @@ import voabar.pages.Confirmation
 class ConfirmationSteps extends Steps {
 
   Then("""^Confirmation page should be shown with "([^"]*)"$"""){ (submissionMsg:String) =>
-    timeDelay(submissionMsg) contains submissionMsg
+    timeDelay shouldBe submissionMsg
   }
 
   Then("""^Upload more Council Tax reports link is displayed$""") { () =>
     Confirmation.isLinkTextPresent("Upload more Council Tax reports")
   }
 
-  private def timeDelay(headerMsg: String): String = {
+  private def timeDelay: String = {
     System.out.println("Pausing to allow file to be processed: 10 secs")
 //    while(25.seconds.fromNow.hasTimeLeft) {
       Thread.sleep(10000L)
@@ -37,6 +37,7 @@ class ConfirmationSteps extends Steps {
 //        return Confirmation.pageHeaderText()
 //      }
 //    }
+
     Confirmation.pageHeaderText()
   }
 }

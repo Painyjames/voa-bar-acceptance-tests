@@ -27,7 +27,7 @@ object Upload extends Page {
   override val expectedPageHeader = Some(s"Billing Authority Reports\nUpload your Council Tax reports")
 
   def setupChooseFile(filepath: String)(implicit driver: WebDriver): Unit = {
-    driver.findElement(By.className("upload")).sendKeys(new File(getClass.getResource(filepath).getPath()).getPath)
+    driver.findElement(By.id("file")).sendKeys(new File(getClass.getResource(filepath).getPath()).getPath)
   }
 
 }

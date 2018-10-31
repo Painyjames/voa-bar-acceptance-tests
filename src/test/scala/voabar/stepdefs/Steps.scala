@@ -18,6 +18,7 @@ package voabar.stepdefs
 
 import java.util.concurrent.TimeUnit
 
+import com.gargoylesoftware.htmlunit.BrowserVersion
 import cucumber.api.scala.{EN, ScalaDsl}
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeDriver
@@ -46,7 +47,7 @@ trait Steps extends ScalaDsl with EN with Matchers {
           driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS)
           Some(driver)
         case "headless" =>
-          val driver = new HtmlUnitDriver
+          val driver = new HtmlUnitDriver(BrowserVersion.CHROME)
           driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS)
           Some(driver)
         case _ => None
