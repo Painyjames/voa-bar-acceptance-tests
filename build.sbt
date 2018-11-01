@@ -14,7 +14,7 @@ val CucumberVersion = "1.2.5"
 
 credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
 
-val hmrcRepoHost = java.lang.System.getProperty("hmrc.repo.host", "https://nexus-preview.tax.service.gov.uk")
+val hmrcRepoHost = java.lang.System.getProperty("hmrc.repo.host", throw new Exception())
 
 scalacOptions ++= Seq("-unchecked", "-deprecation")
 
